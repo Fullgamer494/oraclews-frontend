@@ -86,7 +86,7 @@ export default function Home() {
                 : `Noticias de ${categoryTitles[selectedCategory] || selectedCategory}`
             }
           </h1>
-          <p className="text-gray-500">
+          <p className="text-gray-500" suppressHydrationWarning>
             {new Date().toLocaleDateString("es-ES", {
               weekday: "long",
               year: "numeric",
