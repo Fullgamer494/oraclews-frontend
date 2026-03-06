@@ -12,6 +12,9 @@ COPY . .
 
 # Environment variables might be needed during build if Next.js statically generates pages that need them.
 # But for now we just build
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 RUN npm run build
 
 FROM node:20-alpine AS runner

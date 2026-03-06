@@ -1,5 +1,7 @@
 build:
   docker:
     web: Dockerfile
+  config:
+    NEXT_PUBLIC_API_URL: https://oraclews-backend-023ba253969f.herokuapp.com
 run:
   web: npm start
