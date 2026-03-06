@@ -82,7 +82,7 @@ export default function Home() {
             {searchQuery
               ? `Resultados para: "${searchQuery}"`
               : selectedCategory === "general"
-                ? "Noticias Destacadas"
+                ? "Noticias top del momento"
                 : `Noticias de ${categoryTitles[selectedCategory] || selectedCategory}`
             }
           </h1>
