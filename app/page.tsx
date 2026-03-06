@@ -34,13 +34,14 @@ export default function Home() {
         }
 
         const res = await fetch(endpoint);
+        const data = await res.json().catch(() => null);
 
         if (!res.ok) {
-          throw new Error("No se pudo obtener las noticias del servidor backend.");
+          throw new Error(data?.message || "No se pudo obtener las noticias del servidor backend.");
         }
 
-        const data = await res.json();
-        setNews(data);
+        const articlesList = Array.isArray(data) ? data : (data?.data || []);
+        setNews(articlesList);
       } catch (err: any) {
         setError(err.message || "Error al cargar las noticias.");
       } finally {
